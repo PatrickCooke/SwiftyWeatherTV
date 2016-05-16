@@ -12,6 +12,10 @@
 		433946521CEA33C10093A8D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 433946501CEA33C10093A8D7 /* Main.storyboard */; };
 		433946541CEA33C10093A8D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 433946531CEA33C10093A8D7 /* Assets.xcassets */; };
 		433946571CEA33C10093A8D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 433946551CEA33C10093A8D7 /* LaunchScreen.storyboard */; };
+		433946611CEA34220093A8D7 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 433946601CEA34220093A8D7 /* Reachability.m */; };
+		433946641CEA344B0093A8D7 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433946631CEA344B0093A8D7 /* Weather.swift */; };
+		433946671CEA355D0093A8D7 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433946661CEA355D0093A8D7 /* DataManager.swift */; };
+		433946691CEA356D0093A8D7 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433946681CEA356D0093A8D7 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,12 @@
 		433946531CEA33C10093A8D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		433946561CEA33C10093A8D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		433946581CEA33C10093A8D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4339465E1CEA34220093A8D7 /* SwiftyWeather-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftyWeather-Bridging-Header.h"; sourceTree = "<group>"; };
+		4339465F1CEA34220093A8D7 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		433946601CEA34220093A8D7 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		433946631CEA344B0093A8D7 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		433946661CEA355D0093A8D7 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		433946681CEA356D0093A8D7 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +66,34 @@
 			children = (
 				4339464C1CEA33C10093A8D7 /* AppDelegate.swift */,
 				4339464E1CEA33C10093A8D7 /* ViewController.swift */,
+				433946681CEA356D0093A8D7 /* NetworkManager.swift */,
+				433946661CEA355D0093A8D7 /* DataManager.swift */,
+				433946651CEA34520093A8D7 /* Model */,
 				433946501CEA33C10093A8D7 /* Main.storyboard */,
 				433946531CEA33C10093A8D7 /* Assets.xcassets */,
 				433946551CEA33C10093A8D7 /* LaunchScreen.storyboard */,
 				433946581CEA33C10093A8D7 /* Info.plist */,
+				433946621CEA342D0093A8D7 /* Objective C Reachability Stuff */,
 			);
 			path = SwiftyWeather;
+			sourceTree = "<group>";
+		};
+		433946621CEA342D0093A8D7 /* Objective C Reachability Stuff */ = {
+			isa = PBXGroup;
+			children = (
+				4339465F1CEA34220093A8D7 /* Reachability.h */,
+				433946601CEA34220093A8D7 /* Reachability.m */,
+				4339465E1CEA34220093A8D7 /* SwiftyWeather-Bridging-Header.h */,
+			);
+			name = "Objective C Reachability Stuff";
+			sourceTree = "<group>";
+		};
+		433946651CEA34520093A8D7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				433946631CEA344B0093A8D7 /* Weather.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +168,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				433946691CEA356D0093A8D7 /* NetworkManager.swift in Sources */,
+				433946641CEA344B0093A8D7 /* Weather.swift in Sources */,
+				433946671CEA355D0093A8D7 /* DataManager.swift in Sources */,
 				4339464F1CEA33C10093A8D7 /* ViewController.swift in Sources */,
+				433946611CEA34220093A8D7 /* Reachability.m in Sources */,
 				4339464D1CEA33C10093A8D7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,10 +288,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SwiftyWeather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thepatrickcooke.SwiftyWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftyWeather/SwiftyWeather-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -263,10 +302,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SwiftyWeather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thepatrickcooke.SwiftyWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftyWeather/SwiftyWeather-Bridging-Header.h";
 			};
 			name = Release;
 		};
