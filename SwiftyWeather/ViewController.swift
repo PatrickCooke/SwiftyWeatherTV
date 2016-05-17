@@ -26,7 +26,6 @@ class ViewController: UIViewController {
     
     @IBAction private func getButtonPressed(sender: UIBarButtonItem) {
         if networkManager.serverAvailable{
-            //var searchTerm = "\(searchBar.text)"
             if let address = addressSearchBar.text {
                 dataManager.geoCoder(address)
             } else {
@@ -52,7 +51,9 @@ class ViewController: UIViewController {
         }
         iconImageView.image = UIImage (named: dataManager.currentWeather.curIcon)
         if let currentSummary = dataManager.currentWeather.curSummary {
-            summaryTxtView.text = "Current Weather Summary: " + currentSummary
+            if let dailysummary = dataManager.currentWeather.dailySummary{
+            summaryTxtView.text = "The current weather is: " + currentSummary + ". Today's weather will: " + dailysummary
+            }
         }
     }
     

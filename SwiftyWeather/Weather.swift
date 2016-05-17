@@ -14,6 +14,7 @@ class Weather: NSObject {
     var curIcon        :String!
     var curPrecip      :Double!
     var curSummary     :String!
+    var dailySummary   :String!
     var curWind        :Double!
     var curHumid       :Double!
     var locLat         :Double!

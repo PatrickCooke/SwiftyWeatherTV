@@ -32,12 +32,12 @@ class DataManager: NSObject {
                     return
                 }
                 self.currentWeather = Weather()
-                print("City: \(city) Lat:\(loc.coordinate.latitude) \(loc.coordinate.longitude)")
+                //print("City: \(city) Lat:\(loc.coordinate.latitude) \(loc.coordinate.longitude)")
                 self.currentWeather.locLat = loc.coordinate.latitude 
                 self.currentWeather.locLon = loc.coordinate.longitude
                 let coords = "\(self.currentWeather.locLat),\(self.currentWeather.locLon)"
                 self.currentWeather.locCoord = coords
-                print("locCoord = \(self.currentWeather.locCoord)")
+                //print("locCoord = \(self.currentWeather.locCoord)")
                 self.getDataFromServer(coords)
             }
         }
@@ -49,7 +49,7 @@ class DataManager: NSObject {
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         }
         let url = NSURL(string: "https://\(baseURL)/forecast/\(API)/\(coord)")
-        print("\(url)")
+        //print("\(url)")
         let urlRequest = NSURLRequest(URL: url!, cachePolicy: .ReloadIgnoringLocalCacheData, timeoutInterval: 30.0)
         let urlSession = NSURLSession.sharedSession()
         let task = urlSession.dataTaskWithRequest(urlRequest) { (data, response, error) in
@@ -68,6 +68,10 @@ class DataManager: NSObject {
                 self.currentWeather.curHumid = tempWeatherDict.objectForKey("humidity") as! Double
                 self.currentWeather.curIcon = tempWeatherDict.objectForKey("icon") as! String
                 self.currentWeather.curWind = tempWeatherDict.objectForKey("windSpeed") as! Double
+                
+                let tempWeatherDict2 = jsonResult.objectForKey("daily") as! NSDictionary
+                self.currentWeather.dailySummary = tempWeatherDict2.objectForKey("summary") as! String
+                
                 dispatch_async(dispatch_get_main_queue(), {
                     NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "recvNewDataFromServer", object: nil))
                 })
