@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15D21" minimumToolsVersion="Xcode 7.0">
+    <entity name="Locations" representedClassName=".Locations" syncable="YES">
+        <attribute name="dateEntered" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="locDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="locLat" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="locLon" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Locations" positionX="-63" positionY="-18" width="128" height="105"/>
+    </elements>
+</model>

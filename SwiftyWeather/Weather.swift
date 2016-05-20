@@ -9,6 +9,7 @@
 import UIKit
 
 class Weather: NSObject {
+    var curCity        :String!
     var curTemp        :Double!
     var curAppTemp     :Double!
     var curIcon        :String!
@@ -20,4 +21,6 @@ class Weather: NSObject {
     var locLat         :Double!
     var locLon         :Double!
     var locCoord       :String!
+    var dailyMin       :Double!
+    var dailyMax       :Double!
 }

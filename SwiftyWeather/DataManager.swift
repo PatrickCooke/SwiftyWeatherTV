@@ -19,6 +19,10 @@ class DataManager: NSObject {
 
     
     func geoCoder(addressString: String) {
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        defer {
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        }
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString("\(addressString)") { (placemarks, error) in
             if let placemark = placemarks?[0] {
@@ -33,24 +37,24 @@ class DataManager: NSObject {
                 }
                 self.currentWeather = Weather()
                 //print("City: \(city) Lat:\(loc.coordinate.latitude) \(loc.coordinate.longitude)")
-                self.currentWeather.locLat = loc.coordinate.latitude 
+                self.currentWeather.curCity = (city) as! String
+                self.currentWeather.locLat = loc.coordinate.latitude
                 self.currentWeather.locLon = loc.coordinate.longitude
                 let coords = "\(self.currentWeather.locLat),\(self.currentWeather.locLon)"
                 self.currentWeather.locCoord = coords
-                //print("locCoord = \(self.currentWeather.locCoord)")
-                self.getDataFromServer(coords)
+                self.getDataFromServer(coords, city: city as! String)
             }
         }
     }
     
-    func getDataFromServer(coord: String) {
+    func getDataFromServer(coord: String, city :String) {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         defer {
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         }
-        let url = NSURL(string: "https://\(baseURL)/forecast/\(API)/\(coord)")
-        //print("\(url)")
-        let urlRequest = NSURLRequest(URL: url!, cachePolicy: .ReloadIgnoringLocalCacheData, timeoutInterval: 30.0)
+        let urlString = "https://\(baseURL)/forecast/\(API)/\(coord)"
+        let url = NSURL(string: urlString)
+        let urlRequest = NSURLRequest(URL: url!, cachePolicy: .ReloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 30.0)
         let urlSession = NSURLSession.sharedSession()
         let task = urlSession.dataTaskWithRequest(urlRequest) { (data, response, error) in
             guard let unwrappedData =  data else {
@@ -59,7 +63,8 @@ class DataManager: NSObject {
             }
             do {
                 let jsonResult = try NSJSONSerialization.JSONObjectWithData(unwrappedData, options: .MutableContainers)
-                print("Json: \(jsonResult)")
+//                print("Json: \(jsonResult)")
+                self.currentWeather.curCity = city
                 let tempWeatherDict = jsonResult.objectForKey("currently") as! NSDictionary
                 self.currentWeather.curSummary = tempWeatherDict.objectForKey("summary") as! String
                 self.currentWeather.curTemp = tempWeatherDict.objectForKey("temperature") as! Double
@@ -71,6 +76,7 @@ class DataManager: NSObject {
                 
                 let tempWeatherDict2 = jsonResult.objectForKey("daily") as! NSDictionary
                 self.currentWeather.dailySummary = tempWeatherDict2.objectForKey("summary") as! String
+
                 
                 dispatch_async(dispatch_get_main_queue(), {
                     NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "recvNewDataFromServer", object: nil))
@@ -82,25 +88,6 @@ class DataManager: NSObject {
         }
         task.resume()
         
-    }
-    
-    func fileIsInDocuments(filename: String) -> Bool {
-        let fileManager = NSFileManager.defaultManager()
-        return fileManager.fileExistsAtPath(getDocumentPathForFile(filename))
-    }
-    
-    func getDocumentPathForFile(filename: String) -> String {
-        let documentPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as NSString
-        return documentPath.stringByAppendingPathComponent(filename)
-    }
-    
-    private func getImageFromServer(localFilename: String, remoteFilename: String) { 
-        let remoteURL = NSURL(string: remoteFilename)
-        let imageData = NSData(contentsOfURL: remoteURL!)
-        let imageTemp = UIImage(data: imageData!)
-        if let _ = imageTemp {
-            imageData!.writeToFile(getDocumentPathForFile(localFilename), atomically: false)
-        }
     }
     
 }
