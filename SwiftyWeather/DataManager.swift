@@ -16,6 +16,7 @@ class DataManager: NSObject {
     var baseURL = "api.forecast.io"
     var API = "ae7b4ae2894051dd473dcb9521444186"
     var currentWeather = Weather()
+    
 
     
     func geoCoder(addressString: String) {
@@ -63,7 +64,7 @@ class DataManager: NSObject {
             }
             do {
                 let jsonResult = try NSJSONSerialization.JSONObjectWithData(unwrappedData, options: .MutableContainers)
-//                print("Json: \(jsonResult)")
+                //print("Json: \(jsonResult)")
                 self.currentWeather.curCity = city
                 let tempWeatherDict = jsonResult.objectForKey("currently") as! NSDictionary
                 self.currentWeather.curSummary = tempWeatherDict.objectForKey("summary") as! String
@@ -74,8 +75,52 @@ class DataManager: NSObject {
                 self.currentWeather.curIcon = tempWeatherDict.objectForKey("icon") as! String
                 self.currentWeather.curWind = tempWeatherDict.objectForKey("windSpeed") as! Double
                 
-                let tempWeatherDict2 = jsonResult.objectForKey("daily") as! NSDictionary
-                self.currentWeather.dailySummary = tempWeatherDict2.objectForKey("summary") as! String
+                let hourlyWeatherDict = jsonResult.objectForKey("hourly") as! NSDictionary
+                self.currentWeather.hourlySummary = hourlyWeatherDict.objectForKey("summary") as! String
+                
+                let dailyWeatherDict = jsonResult.objectForKey("daily") as! NSDictionary
+                //print("\(dailyWeatherDict)")
+                self.currentWeather.dailySummary = dailyWeatherDict.objectForKey("summary") as! String
+                let dataDailyArray = dailyWeatherDict.objectForKey("data") as! [NSDictionary]
+                //print("\(dataDailyArray)")
+                
+                
+                var dailyWArray = [DailyWeather]()
+                for dayWeatherDict in dataDailyArray {
+                
+                    let dailyW = DailyWeather()
+                    let tempMax = dayWeatherDict.objectForKey("temperatureMax")
+                    //print("Max: \(tempMax)")
+                    dailyW.dayMaxTemp = tempMax as! Double
+                    let tempMin = dayWeatherDict.objectForKey("temperatureMin")
+                    dailyW.dayMinTemp = tempMin as! Double
+                    let odds = dayWeatherDict.objectForKey("precipProbability")
+                    dailyW.precipOdds = odds as! Double
+                    let type = dayWeatherDict.objectForKey("precipType")
+                    dailyW.precipType = type as! String
+                    let time = dayWeatherDict.objectForKey("time")
+                    dailyW.time = time as! Double
+                    let summary = dayWeatherDict.objectForKey("summary")
+                    dailyW.daysum = summary as! String
+                   
+                    
+                    dailyWArray.append(dailyW)
+                }
+                self.currentWeather.dailyforcast = dailyWArray
+                print("Got \(self.currentWeather.dailyforcast.count)")
+                
+                
+                
+/*                //What do I do here????????????????????????????????
+                
+                let tempDict = dataDailyArray.firstObject as! NSArray
+                for ???? in tempDict {
+                   self.currentWeather.dailyMax =
+                }
+                
+                print(self.currentWeather.dailyMax) 
+ */
+                
 
                 
                 dispatch_async(dispatch_get_main_queue(), {

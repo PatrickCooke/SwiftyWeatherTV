@@ -16,11 +16,11 @@ class Weather: NSObject {
     var curPrecip      :Double!
     var curSummary     :String!
     var dailySummary   :String!
+    var hourlySummary   :String!
     var curWind        :Double!
     var curHumid       :Double!
     var locLat         :Double!
     var locLon         :Double!
     var locCoord       :String!
-    var dailyMin       :Double!
-    var dailyMax       :Double!
+    var dailyforcast   = [DailyWeather]()
 }

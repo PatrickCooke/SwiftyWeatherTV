@@ -25,6 +25,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var summaryTxtView   :UITextView!
     private var locArray = [Locations]()
     @IBOutlet weak var locTableView     :UITableView!
+    @IBOutlet weak var highLowLabel     :UILabel!
 
     
     
@@ -146,7 +147,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         if let currentSummary = dataManager.currentWeather.curSummary {
             if let dailysummary = dataManager.currentWeather.dailySummary{
-            summaryTxtView.text = "The current weather is: " + currentSummary + ". Upcoming: " + dailysummary
+                if let hourlysummary = dataManager.currentWeather.hourlySummary {
+            summaryTxtView.text = "The current weather is: " + currentSummary + ". Upcoming: " + hourlysummary + " Forcast: " + dailysummary
+                    
+                }
             }
         }
     }
@@ -164,7 +168,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
      //MARK: - Data Methods
     
     func newDataRecv() {
-        print("reloading data")
+        //print("reloading data")
         blankeverything()
         fillEverythingOut()
     }
@@ -174,6 +178,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(newDataRecv), name: "recvNewDataFromServer", object: nil)
+        summaryTxtView.layer.cornerRadius = 10.0
+        currentTempLabel.layer.cornerRadius = 10.0
+        feelsLikeLabel.layer.cornerRadius = 10.0
+        precipLabel.layer.cornerRadius = 10.0
+        windSpeedLabel.layer.cornerRadius = 10.0
+        summaryTxtView.layer.masksToBounds = true
+        currentTempLabel.layer.masksToBounds = true
+        feelsLikeLabel.layer.masksToBounds = true
+        precipLabel.layer.masksToBounds = true
+        windSpeedLabel.layer.masksToBounds = true
+        
+        
     }
     
     override func viewWillAppear(animated: Bool) {
