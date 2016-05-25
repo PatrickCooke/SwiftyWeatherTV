@@ -107,7 +107,8 @@ class DataManager: NSObject {
                     dailyWArray.append(dailyW)
                 }
                 self.currentWeather.dailyforcast = dailyWArray
-                print("Got \(self.currentWeather.dailyforcast.count)")
+                
+                print("Got \(self.currentWeather.dailyforcast[valueForKey(dayMaxTemp)])")
                 
                 
                 

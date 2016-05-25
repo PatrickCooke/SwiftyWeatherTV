@@ -22,5 +22,5 @@ class Weather: NSObject {
     var locLat         :Double!
     var locLon         :Double!
     var locCoord       :String!
-    var dailyforcast   = [DailyWeather]()
+    var dailyforcast   = [DailyWeather]() 
 }
