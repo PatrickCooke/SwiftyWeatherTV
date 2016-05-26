@@ -20,6 +20,7 @@ class DataManager: NSObject {
 
     
     func geoCoder(addressString: String) {
+        print(addressString)
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         defer {
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
@@ -31,19 +32,26 @@ class DataManager: NSObject {
                     return
                 }
                 guard let city = addressDict["City"] else {
+                    print(addressDict)
+                    return
+                }
+                guard let state = addressDict["State"] else {
                     return
                 }
                 guard let loc = placemark.location else {
                     return
                 }
+                
+                //print(state)
                 self.currentWeather = Weather()
-                //print("City: \(city) Lat:\(loc.coordinate.latitude) \(loc.coordinate.longitude)")
+                print("City: \(city) Lat:\(loc.coordinate.latitude) \(loc.coordinate.longitude)")
                 self.currentWeather.curCity = (city) as! String
                 self.currentWeather.locLat = loc.coordinate.latitude
                 self.currentWeather.locLon = loc.coordinate.longitude
                 let coords = "\(self.currentWeather.locLat),\(self.currentWeather.locLon)"
                 self.currentWeather.locCoord = coords
-                self.getDataFromServer(coords, city: city as! String)
+                let city2 = "\(city), \(state)"
+                self.getDataFromServer(coords, city: city2)
             }
         }
     }
@@ -64,7 +72,7 @@ class DataManager: NSObject {
             }
             do {
                 let jsonResult = try NSJSONSerialization.JSONObjectWithData(unwrappedData, options: .MutableContainers)
-                //print("Json: \(jsonResult)")
+                print("Json: \(jsonResult)")
                 self.currentWeather.curCity = city
                 let tempWeatherDict = jsonResult.objectForKey("currently") as! NSDictionary
                 self.currentWeather.curSummary = tempWeatherDict.objectForKey("summary") as! String
@@ -96,8 +104,8 @@ class DataManager: NSObject {
                     dailyW.dayMinTemp = tempMin as! Double
                     let odds = dayWeatherDict.objectForKey("precipProbability")
                     dailyW.precipOdds = odds as! Double
-                    let type = dayWeatherDict.objectForKey("precipType")
-                    dailyW.precipType = type as! String
+//                    let type = dayWeatherDict.objectForKey("precipType")
+//                    dailyW.precipType = type as! String
                     let time = dayWeatherDict.objectForKey("time")
                     dailyW.time = time as! Double
                     let summary = dayWeatherDict.objectForKey("summary")
@@ -107,26 +115,11 @@ class DataManager: NSObject {
                     dailyWArray.append(dailyW)
                 }
                 self.currentWeather.dailyforcast = dailyWArray
-                print("Got \(self.currentWeather.dailyforcast)")
-                //print("Got \(DailyWeather.valueForKey("precipType"))") <- This Errored Out... does not a key value for "precipType"
-                
-                
-                
-/*                //What do I do here????????????????????????????????
-                
-                let tempDict = dataDailyArray.firstObject as! NSArray
-                for ???? in tempDict {
-                   self.currentWeather.dailyMax =
-                }
-                
-                print(self.currentWeather.dailyMax) 
- */
-                
-
-                
+ 
                 dispatch_async(dispatch_get_main_queue(), {
                     NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "recvNewDataFromServer", object: nil))
                 })
+                print("sent info")
             } catch {
                 print("JSON Parsing Error")
             }

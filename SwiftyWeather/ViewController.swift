@@ -69,7 +69,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     
-    
     //MARK: - Interactivity
     
     func fetchEntries() -> [Locations]? {
@@ -82,12 +81,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }catch {
             return nil
         }
-    }
-    
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        performGeocode()
-        addressSearchBar.resignFirstResponder()
-        addressSearchBar.text = ""
     }
     
     private func loadLocArray() {
@@ -121,8 +114,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBAction private func getButtonPressed(sender: UIBarButtonItem) {
         addressSearchBar.resignFirstResponder()
-        addressSearchBar.text = ""
         performGeocode()
+        addressSearchBar.text = ""
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        addressSearchBar.resignFirstResponder()
+        performGeocode()
+        addressSearchBar.text = ""
     }
     
     func fillEverythingOut() {
@@ -190,52 +189,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             // Place details
             var placeMark: CLPlacemark!
             placeMark = placeArray?[0]
-            
-            // Address dictionary
-            print(placeMark.addressDictionary)
-            
-            // Location name
-            if let locationName = placeMark.addressDictionary?["Name"] as? NSString
-            {
-                print(locationName)
-            }
 
             // City
             if let city = placeMark.addressDictionary?["City"] as? NSString
             {
                 print(city)
+                let coords = "\(locValue.latitude),\(locValue.longitude)"
+                self.dataManager.getDataFromServer(coords, city: city as String)
             }
         }
+
     }
 
-    
-//    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
-//        print("locations = \(locValue.latitude) \(locValue.longitude)")
-//        
-//        let geoCoder = CLGeocoder()
-//        let location = CLLocation(latitude: locValue.latitude, longitude: locValue.longitude)
-//        
-//        geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
-//            // Place details
-//            var placeMark: CLPlacemark!
-//            placeMark = placemarks?[0]
-//            // Location name
-//            if let locationName = placeMark.addressDictionary!["Name"] as? NSString {
-//                print(locationName)
-//            }
-//            // City
-//            if let city = placeMark.addressDictionary!["City"] as? NSString {
-//                print(city)
-//            }
-//        })
-//    }
-
-
-    
-    
-    
-     //MARK: - Data Methods
+    //MARK: - Data Methods
     
     func newDataRecv() {
         //print("reloading data")
@@ -260,6 +226,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewWillAppear(animated)
         loadLocArray()
         locTableView.reloadData()
+        //setUsersClosestCity()
     }
 
     override func didReceiveMemoryWarning() {

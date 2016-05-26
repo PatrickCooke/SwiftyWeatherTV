@@ -20,7 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" placeholder="Search your City, State" translatesAutoresizingMaskIntoConstraints="NO" id="3Hs-MC-K0h">
+                            <searchBar contentMode="redraw" placeholder="Search City or State" translatesAutoresizingMaskIntoConstraints="NO" id="3Hs-MC-K0h">
                                 <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="m10-ML-dVN"/>
@@ -171,7 +171,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OiN-8h-vo3">
-                                <rect key="frame" x="455" y="108" width="125" height="125"/>
+                                <rect key="frame" x="455" y="114" width="125" height="125"/>
                                 <color key="backgroundColor" red="0.95602115399999998" green="0.95132935110000005" blue="0.96210323949999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="OiN-8h-vo3" secondAttribute="height" multiplier="1:1" id="4Mw-yL-9CD"/>
@@ -201,7 +201,7 @@
                                     <constraint firstAttribute="width" constant="98" id="6Ox-70-dJC"/>
                                     <constraint firstAttribute="height" constant="31" id="sJs-Lg-Hmj"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                 <state key="normal" title="Store City"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -212,7 +212,7 @@
                                     <action selector="saveLocationPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="RVB-kO-gM6"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="30" sectionHeaderHeight="20" sectionFooterHeight="20" translatesAutoresizingMaskIntoConstraints="NO" id="WoC-eU-5kP">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="28" sectionHeaderHeight="20" sectionFooterHeight="20" translatesAutoresizingMaskIntoConstraints="NO" id="WoC-eU-5kP">
                                 <rect key="frame" x="0.0" y="488" width="600" height="112"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -220,17 +220,17 @@
                                 </constraints>
                                 <inset key="scrollIndicatorInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="OQS-mK-bKa" rowHeight="20" style="IBUITableViewCellStyleDefault" id="TzV-ua-leh">
-                                        <rect key="frame" x="0.0" y="20" width="600" height="20"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="OQS-mK-bKa" rowHeight="28" style="IBUITableViewCellStyleDefault" id="TzV-ua-leh">
+                                        <rect key="frame" x="0.0" y="20" width="600" height="28"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TzV-ua-leh" id="5kz-gz-1xg">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="19.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="27.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OQS-mK-bKa">
-                                                    <rect key="frame" x="15" y="0.0" width="570" height="19.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="570" height="27.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -251,7 +251,7 @@
                             <constraint firstItem="sj2-ye-cgu" firstAttribute="leading" secondItem="7sK-CU-pCw" secondAttribute="trailing" constant="8" id="5iO-XF-cCC"/>
                             <constraint firstItem="KcY-1q-kNT" firstAttribute="top" secondItem="hxu-LN-VRx" secondAttribute="bottom" constant="8" id="7NY-8z-9bm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hxu-LN-VRx" secondAttribute="trailing" id="7wQ-QQ-DwH"/>
-                            <constraint firstItem="OiN-8h-vo3" firstAttribute="top" secondItem="3Hs-MC-K0h" secondAttribute="bottom" id="8j8-Yp-IFG"/>
+                            <constraint firstItem="OiN-8h-vo3" firstAttribute="top" secondItem="3Hs-MC-K0h" secondAttribute="bottom" constant="6" id="8j8-Yp-IFG"/>
                             <constraint firstAttribute="leadingMargin" secondItem="feX-gp-msW" secondAttribute="leading" id="9kD-7u-udx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WoC-eU-5kP" secondAttribute="trailing" constant="-20" id="Bdi-Ce-aaA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BLL-Lx-Zkh" secondAttribute="trailing" id="Cw2-QM-vN9"/>
@@ -294,12 +294,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="lSA-Aa-jbw">
                         <rightBarButtonItems>
-                            <barButtonItem title="Get Weather" id="LHi-1c-IiT">
+                            <barButtonItem systemItem="search" id="LHi-1c-IiT">
                                 <connections>
                                     <action selector="getButtonPressed:" destination="BYZ-38-t0r" id="Oe5-Hy-IEM"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Local Weather" id="cZw-LT-MDo">
+                            <barButtonItem image="localIcon" id="cZw-LT-MDo">
                                 <connections>
                                     <action selector="getLocation" destination="BYZ-38-t0r" id="rlm-Hh-Psz"/>
                                 </connections>
@@ -341,4 +341,7 @@
             <point key="canvasLocation" x="502" y="337"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="localIcon" width="44" height="44"/>
+    </resources>
 </document>
