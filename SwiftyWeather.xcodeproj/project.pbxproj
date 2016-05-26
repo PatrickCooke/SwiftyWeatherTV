@@ -20,6 +20,9 @@
 		4339466F1CEB4D0D0093A8D7 /* Locations+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4339466D1CEB4D0D0093A8D7 /* Locations+CoreDataProperties.swift */; };
 		433946701CEB4D0D0093A8D7 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4339466E1CEB4D0D0093A8D7 /* Locations.swift */; };
 		43A755571CF6226000E5B7F6 /* DailyWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A755561CF6226000E5B7F6 /* DailyWeather.swift */; };
+		43DC92251CF75E1B0062C5CC /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC92241CF75E1B0062C5CC /* RoundedButton.swift */; };
+		43DC92271CF75EAA0062C5CC /* RoundedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC92261CF75EAA0062C5CC /* RoundedTextView.swift */; };
+		43DC92291CF75ECF0062C5CC /* RoundedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC92281CF75ECF0062C5CC /* RoundedLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		4339466D1CEB4D0D0093A8D7 /* Locations+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Locations+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4339466E1CEB4D0D0093A8D7 /* Locations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
 		43A755561CF6226000E5B7F6 /* DailyWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyWeather.swift; sourceTree = "<group>"; };
+		43DC92241CF75E1B0062C5CC /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		43DC92261CF75EAA0062C5CC /* RoundedTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedTextView.swift; sourceTree = "<group>"; };
+		43DC92281CF75ECF0062C5CC /* RoundedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,9 @@
 				433946531CEA33C10093A8D7 /* Assets.xcassets */,
 				433946551CEA33C10093A8D7 /* LaunchScreen.storyboard */,
 				433946581CEA33C10093A8D7 /* Info.plist */,
+				43DC92241CF75E1B0062C5CC /* RoundedButton.swift */,
+				43DC92261CF75EAA0062C5CC /* RoundedTextView.swift */,
+				43DC92281CF75ECF0062C5CC /* RoundedLabel.swift */,
 				433946621CEA342D0093A8D7 /* Objective C Reachability Stuff */,
 			);
 			path = SwiftyWeather;
@@ -181,11 +190,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				43A755571CF6226000E5B7F6 /* DailyWeather.swift in Sources */,
+				43DC92271CF75EAA0062C5CC /* RoundedTextView.swift in Sources */,
 				433946701CEB4D0D0093A8D7 /* Locations.swift in Sources */,
 				433946691CEA356D0093A8D7 /* NetworkManager.swift in Sources */,
+				43DC92291CF75ECF0062C5CC /* RoundedLabel.swift in Sources */,
 				433946641CEA344B0093A8D7 /* Weather.swift in Sources */,
 				4339466C1CEB4C9E0093A8D7 /* SwiftyWeatherModel.xcdatamodeld in Sources */,
 				433946671CEA355D0093A8D7 /* DataManager.swift in Sources */,
+				43DC92251CF75E1B0062C5CC /* RoundedButton.swift in Sources */,
 				4339466F1CEB4D0D0093A8D7 /* Locations+CoreDataProperties.swift in Sources */,
 				4339464F1CEA33C10093A8D7 /* ViewController.swift in Sources */,
 				433946611CEA34220093A8D7 /* Reachability.m in Sources */,

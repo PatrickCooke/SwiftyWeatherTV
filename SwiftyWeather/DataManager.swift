@@ -107,8 +107,8 @@ class DataManager: NSObject {
                     dailyWArray.append(dailyW)
                 }
                 self.currentWeather.dailyforcast = dailyWArray
-                
-                print("Got \(self.currentWeather.dailyforcast[valueForKey(dayMaxTemp)])")
+                print("Got \(self.currentWeather.dailyforcast)")
+                //print("Got \(DailyWeather.valueForKey("precipType"))") <- This Errored Out... does not a key value for "precipType"
                 
                 
                 

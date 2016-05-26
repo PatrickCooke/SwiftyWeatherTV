@@ -8,8 +8,9 @@
 
 import UIKit
 import CoreData
+import CoreLocation
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, CLLocationManagerDelegate {
 
     var dataManager = DataManager.sharedInstance
     var networkManager = NetworkManager.sharedInstance
@@ -26,6 +27,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     private var locArray = [Locations]()
     @IBOutlet weak var locTableView     :UITableView!
     @IBOutlet weak var highLowLabel     :UILabel!
+    var locationManager = CLLocationManager()
+
 
     
     
@@ -123,6 +126,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func fillEverythingOut() {
+        print()
+        
         if let currentCity = dataManager.currentWeather.curCity{
             LocationLabel.text = currentCity
         }
@@ -149,10 +154,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             if let dailysummary = dataManager.currentWeather.dailySummary{
                 if let hourlysummary = dataManager.currentWeather.hourlySummary {
             summaryTxtView.text = "The current weather is: " + currentSummary + ". Upcoming: " + hourlysummary + " Forcast: " + dailysummary
-                    
                 }
             }
         }
+        
     }
     
     private func blankeverything() {
@@ -164,6 +169,71 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         iconImageView.image = nil
         summaryTxtView.text = ""
     }
+    
+    //MARK: - Location Methods
+    
+    @IBAction func getLocation() {
+        setUsersClosestCity()
+    }
+
+    func setUsersClosestCity() {
+        let locValue:CLLocationCoordinate2D = locationManager.location!.coordinate
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        let geoCoder = CLGeocoder()
+        let location = CLLocation(latitude: locValue.latitude, longitude: locValue.longitude)
+        geoCoder.reverseGeocodeLocation(location)
+        {
+            (placemarks, error) -> Void in
+            
+            let placeArray = placemarks as [CLPlacemark]!
+            
+            // Place details
+            var placeMark: CLPlacemark!
+            placeMark = placeArray?[0]
+            
+            // Address dictionary
+            print(placeMark.addressDictionary)
+            
+            // Location name
+            if let locationName = placeMark.addressDictionary?["Name"] as? NSString
+            {
+                print(locationName)
+            }
+
+            // City
+            if let city = placeMark.addressDictionary?["City"] as? NSString
+            {
+                print(city)
+            }
+        }
+    }
+
+    
+//    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
+//        print("locations = \(locValue.latitude) \(locValue.longitude)")
+//        
+//        let geoCoder = CLGeocoder()
+//        let location = CLLocation(latitude: locValue.latitude, longitude: locValue.longitude)
+//        
+//        geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
+//            // Place details
+//            var placeMark: CLPlacemark!
+//            placeMark = placemarks?[0]
+//            // Location name
+//            if let locationName = placeMark.addressDictionary!["Name"] as? NSString {
+//                print(locationName)
+//            }
+//            // City
+//            if let city = placeMark.addressDictionary!["City"] as? NSString {
+//                print(city)
+//            }
+//        })
+//    }
+
+
+    
+    
     
      //MARK: - Data Methods
     
@@ -178,17 +248,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(newDataRecv), name: "recvNewDataFromServer", object: nil)
-        summaryTxtView.layer.cornerRadius = 10.0
-        currentTempLabel.layer.cornerRadius = 10.0
-        feelsLikeLabel.layer.cornerRadius = 10.0
-        precipLabel.layer.cornerRadius = 10.0
-        windSpeedLabel.layer.cornerRadius = 10.0
-        summaryTxtView.layer.masksToBounds = true
-        currentTempLabel.layer.masksToBounds = true
-        feelsLikeLabel.layer.masksToBounds = true
-        precipLabel.layer.masksToBounds = true
-        windSpeedLabel.layer.masksToBounds = true
-        
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
         
     }
     

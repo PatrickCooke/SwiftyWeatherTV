@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -29,7 +30,7 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Wrr-du-yIW"/>
                                 </connections>
                             </searchBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Temp:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7sK-CU-pCw">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Temp:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7sK-CU-pCw" customClass="RoundedLabel" customModule="SwiftyWeather" customModuleProvider="target">
                                 <rect key="frame" x="20" y="158" width="147" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="147" id="0kw-Ay-Jq3"/>
@@ -38,8 +39,13 @@
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="22"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sj2-ye-cgu">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sj2-ye-cgu" customClass="RoundedLabel" customModule="SwiftyWeather" customModuleProvider="target">
                                 <rect key="frame" x="175" y="158" width="272" height="37"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -48,8 +54,13 @@
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feels Like:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="52U-ZN-h3x">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feels Like:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="52U-ZN-h3x" customClass="RoundedLabel" customModule="SwiftyWeather" customModuleProvider="target">
                                 <rect key="frame" x="20" y="203" width="87" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="87" id="8vF-ab-gOw"/>
@@ -58,8 +69,13 @@
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FAd-TQ-jlJ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FAd-TQ-jlJ" customClass="RoundedLabel" customModule="SwiftyWeather" customModuleProvider="target">
                                 <rect key="frame" x="115" y="203" width="332" height="21"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -68,8 +84,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dUb-Sc-Mwm">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dUb-Sc-Mwm" customClass="RoundedLabel" customModule="SwiftyWeather" customModuleProvider="target">
                                 <rect key="frame" x="20" y="243" width="52" height="26"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -79,8 +100,13 @@
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chance of Rain" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="seQ-3U-o82">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chance of Rain" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="seQ-3U-o82" customClass="RoundedLabel" customModule="SwiftyWeather" customModuleProvider="target">
                                 <rect key="frame" x="80" y="243" width="367" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="354" id="557-Ap-Zmv"/>
@@ -89,13 +115,18 @@
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="557-Ap-Zmv"/>
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wind blowing at:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="veY-Xi-k1s">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wind blowing at:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="veY-Xi-k1s" customClass="RoundedLabel" customModule="SwiftyWeather" customModuleProvider="target">
                                 <rect key="frame" x="20" y="282" width="164" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="rjh-li-H2z"/>
@@ -104,8 +135,13 @@
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BLL-Lx-Zkh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BLL-Lx-Zkh" customClass="RoundedLabel" customModule="SwiftyWeather" customModuleProvider="target">
                                 <rect key="frame" x="192" y="282" width="388" height="26"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -114,8 +150,13 @@
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hxu-LN-VRx">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hxu-LN-VRx" customClass="RoundedTextView" customModule="SwiftyWeather" customModuleProvider="target">
                                 <rect key="frame" x="20" y="316" width="560" height="125"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -123,6 +164,11 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OiN-8h-vo3">
                                 <rect key="frame" x="455" y="108" width="125" height="125"/>
@@ -148,7 +194,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KcY-1q-kNT">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KcY-1q-kNT" customClass="RoundedButton" customModule="SwiftyWeather" customModuleProvider="target">
                                 <rect key="frame" x="482" y="449" width="98" height="31"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -157,23 +203,32 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Store City"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="saveLocationPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="RVB-kO-gM6"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="30" sectionHeaderHeight="20" sectionFooterHeight="20" translatesAutoresizingMaskIntoConstraints="NO" id="WoC-eU-5kP">
-                                <rect key="frame" x="20" y="488" width="560" height="92"/>
+                                <rect key="frame" x="0.0" y="488" width="600" height="112"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="112" id="u4t-lo-PEr"/>
+                                </constraints>
+                                <inset key="scrollIndicatorInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="OQS-mK-bKa" rowHeight="20" style="IBUITableViewCellStyleDefault" id="TzV-ua-leh">
-                                        <rect key="frame" x="0.0" y="20" width="560" height="20"/>
+                                        <rect key="frame" x="0.0" y="20" width="600" height="20"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TzV-ua-leh" id="5kz-gz-1xg">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="19.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="19.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OQS-mK-bKa">
-                                                    <rect key="frame" x="15" y="0.0" width="530" height="19.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="570" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -198,7 +253,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="hxu-LN-VRx" secondAttribute="trailing" id="7wQ-QQ-DwH"/>
                             <constraint firstItem="OiN-8h-vo3" firstAttribute="top" secondItem="3Hs-MC-K0h" secondAttribute="bottom" id="8j8-Yp-IFG"/>
                             <constraint firstAttribute="leadingMargin" secondItem="feX-gp-msW" secondAttribute="leading" id="9kD-7u-udx"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="WoC-eU-5kP" secondAttribute="trailing" id="Bdi-Ce-aaA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WoC-eU-5kP" secondAttribute="trailing" constant="-20" id="Bdi-Ce-aaA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BLL-Lx-Zkh" secondAttribute="trailing" id="Cw2-QM-vN9"/>
                             <constraint firstItem="OiN-8h-vo3" firstAttribute="leading" secondItem="sj2-ye-cgu" secondAttribute="trailing" constant="8" id="GAh-MQ-72b"/>
                             <constraint firstItem="dUb-Sc-Mwm" firstAttribute="top" secondItem="52U-ZN-h3x" secondAttribute="bottom" constant="19" id="I0A-Mj-AYh"/>
@@ -206,7 +261,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="KcY-1q-kNT" secondAttribute="trailing" id="KZO-QW-Ogz"/>
                             <constraint firstItem="hxu-LN-VRx" firstAttribute="top" secondItem="veY-Xi-k1s" secondAttribute="bottom" constant="8" id="LH6-64-D2g"/>
                             <constraint firstItem="veY-Xi-k1s" firstAttribute="top" secondItem="dUb-Sc-Mwm" secondAttribute="bottom" constant="13.5" id="LoE-Kw-YhO"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="WoC-eU-5kP" secondAttribute="leading" id="P7Q-3d-ZWe"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="WoC-eU-5kP" secondAttribute="leading" constant="20" id="P7Q-3d-ZWe"/>
                             <constraint firstItem="WoC-eU-5kP" firstAttribute="top" secondItem="KcY-1q-kNT" secondAttribute="bottom" constant="8" id="PZ8-dU-vMA"/>
                             <constraint firstItem="FAd-TQ-jlJ" firstAttribute="leading" secondItem="52U-ZN-h3x" secondAttribute="trailing" constant="8" id="Ttg-aC-sNO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OiN-8h-vo3" secondAttribute="trailing" id="U4B-Np-0tZ"/>
@@ -226,22 +281,30 @@
                             <constraint firstItem="OiN-8h-vo3" firstAttribute="leading" secondItem="feX-gp-msW" secondAttribute="trailing" constant="8" id="rmJ-8J-wBy"/>
                             <constraint firstItem="7sK-CU-pCw" firstAttribute="top" secondItem="3Hs-MC-K0h" secondAttribute="bottom" constant="50" id="s61-5p-HZA"/>
                             <constraint firstAttribute="leadingMargin" secondItem="52U-ZN-h3x" secondAttribute="leading" id="sZJ-EG-9zM"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="WoC-eU-5kP" secondAttribute="bottom" constant="20" id="t3W-w2-gxn"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="WoC-eU-5kP" secondAttribute="bottom" id="t3W-w2-gxn"/>
                             <constraint firstItem="sj2-ye-cgu" firstAttribute="top" secondItem="3Hs-MC-K0h" secondAttribute="bottom" constant="50" id="y9Y-r2-tQS"/>
                             <constraint firstAttribute="leadingMargin" secondItem="dUb-Sc-Mwm" secondAttribute="leading" id="z5c-fc-YnS"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="PZ8-dU-vMA"/>
                                 <exclude reference="VrK-Qc-GjF"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="lSA-Aa-jbw">
-                        <barButtonItem key="rightBarButtonItem" title="Get Weather" id="LHi-1c-IiT">
-                            <connections>
-                                <action selector="getButtonPressed:" destination="BYZ-38-t0r" id="Oe5-Hy-IEM"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Get Weather" id="LHi-1c-IiT">
+                                <connections>
+                                    <action selector="getButtonPressed:" destination="BYZ-38-t0r" id="Oe5-Hy-IEM"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Local Weather" id="cZw-LT-MDo">
+                                <connections>
+                                    <action selector="getLocation" destination="BYZ-38-t0r" id="rlm-Hh-Psz"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="LocationLabel" destination="feX-gp-msW" id="MH1-dA-Wvg"/>
