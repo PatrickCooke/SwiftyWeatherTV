@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import CoreLocation
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, CLLocationManagerDelegate {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, CLLocationManagerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     var dataManager = DataManager.sharedInstance
     var networkManager = NetworkManager.sharedInstance
@@ -25,12 +25,53 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var addressSearchBar :UISearchBar!
     @IBOutlet weak var summaryTxtView   :UITextView!
     private var locArray = [Locations]()
+    private var dailyArray = [DailyWeather]()
     @IBOutlet weak var locTableView     :UITableView!
     @IBOutlet weak var highLowLabel     :UILabel!
     var locationManager = CLLocationManager()
-
+    @IBOutlet weak var dailyCollectionView  :UICollectionView!
 
     
+    //MARK: - CollectionView Methods
+    
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return dailyArray.count
+    }
+
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! DailyWeatherCell
+        
+        let selecteddate = dailyArray[indexPath.row]
+        
+        if let date = selecteddate.time {
+            //            print("raw date format \(date)")
+            let date1 = NSDate(timeIntervalSince1970: date)
+            //            print("converted date: \(date1)")
+            let formatter = NSDateFormatter()
+            formatter.dateFormat = "E"
+            let dayOfWeek = formatter.stringFromDate(date1)
+            //            print(dayOfWeek)
+            if let todayHigh = selecteddate.dayMaxTemp {
+                if let todayLow = selecteddate.dayMinTemp {
+                    let high = Int(todayHigh)
+                    let low = Int(todayLow)
+                    cell.dateLabel.text = "\(dayOfWeek): \(high)°F/\(low)°F"
+                }
+            }
+            
+        }
+        if let icon = selecteddate.dayIcon {
+            cell.dateIcon.image = UIImage (named: icon)
+        }
+        return cell
+    }
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return CGSizeMake(125, 75)
+    }
     
     //MARK: - Table Methods
     
@@ -125,8 +166,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func fillEverythingOut() {
-        print()
-        
         if let currentCity = dataManager.currentWeather.curCity{
             LocationLabel.text = currentCity
         }
@@ -156,7 +195,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 }
             }
         }
-        
+        if let todayHigh = dataManager.currentWeather.dailyforcast.first?.dayMaxTemp {
+            if let todayLow = dataManager.currentWeather.dailyforcast.first?.dayMinTemp {
+                let high = Int(todayHigh)
+                let low = Int(todayLow)
+                highLowLabel.text = "\(high)/\(low)"
+            }
+        }
     }
     
     private func blankeverything() {
@@ -180,33 +225,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         print("locations = \(locValue.latitude) \(locValue.longitude)")
         let geoCoder = CLGeocoder()
         let location = CLLocation(latitude: locValue.latitude, longitude: locValue.longitude)
-        geoCoder.reverseGeocodeLocation(location)
-        {
+        geoCoder.reverseGeocodeLocation(location) {
             (placemarks, error) -> Void in
-            
             let placeArray = placemarks as [CLPlacemark]!
-            
-            // Place details
-            var placeMark: CLPlacemark!
+            var placeMark: CLPlacemark! // Place details
             placeMark = placeArray?[0]
-
-            // City
-            if let city = placeMark.addressDictionary?["City"] as? NSString
-            {
+            if let city = placeMark.addressDictionary?["City"] as? NSString { // City
                 print(city)
                 let coords = "\(locValue.latitude),\(locValue.longitude)"
                 self.dataManager.getDataFromServer(coords, city: city as String)
             }
         }
-
     }
 
     //MARK: - Data Methods
     
     func newDataRecv() {
-        //print("reloading data")
         blankeverything()
+        dailyArray = dataManager.currentWeather.dailyforcast
         fillEverythingOut()
+        dailyCollectionView.reloadData()
     }
     
     //MARK: - Life Cycle Methods
@@ -226,7 +264,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewWillAppear(animated)
         loadLocArray()
         locTableView.reloadData()
-        //setUsersClosestCity()
+        setUsersClosestCity()
     }
 
     override func didReceiveMemoryWarning() {

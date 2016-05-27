@@ -72,7 +72,7 @@ class DataManager: NSObject {
             }
             do {
                 let jsonResult = try NSJSONSerialization.JSONObjectWithData(unwrappedData, options: .MutableContainers)
-                print("Json: \(jsonResult)")
+                //print("Json: \(jsonResult)")
                 self.currentWeather.curCity = city
                 let tempWeatherDict = jsonResult.objectForKey("currently") as! NSDictionary
                 self.currentWeather.curSummary = tempWeatherDict.objectForKey("summary") as! String
@@ -90,7 +90,7 @@ class DataManager: NSObject {
                 //print("\(dailyWeatherDict)")
                 self.currentWeather.dailySummary = dailyWeatherDict.objectForKey("summary") as! String
                 let dataDailyArray = dailyWeatherDict.objectForKey("data") as! [NSDictionary]
-                //print("\(dataDailyArray)")
+                print("\(dataDailyArray)")
                 
                 
                 var dailyWArray = [DailyWeather]()
@@ -102,10 +102,10 @@ class DataManager: NSObject {
                     dailyW.dayMaxTemp = tempMax as! Double
                     let tempMin = dayWeatherDict.objectForKey("temperatureMin")
                     dailyW.dayMinTemp = tempMin as! Double
+                    let icon = dayWeatherDict.objectForKey("icon")
+                    dailyW.dayIcon = icon as! String
                     let odds = dayWeatherDict.objectForKey("precipProbability")
                     dailyW.precipOdds = odds as! Double
-//                    let type = dayWeatherDict.objectForKey("precipType")
-//                    dailyW.precipType = type as! String
                     let time = dayWeatherDict.objectForKey("time")
                     dailyW.time = time as! Double
                     let summary = dayWeatherDict.objectForKey("summary")
@@ -115,7 +115,20 @@ class DataManager: NSObject {
                     dailyWArray.append(dailyW)
                 }
                 self.currentWeather.dailyforcast = dailyWArray
- 
+
+/*          THIS IS HOW YOU GET THE DAY OF THE WEEK
+                 
+                if let date = self.currentWeather.dailyforcast.first?.time {
+                    print("raw date format \(date)")
+                    let date1 = NSDate(timeIntervalSince1970: date)
+                    print("converted date: \(date1)")
+                    let formatter = NSDateFormatter()
+                    formatter.dateFormat = "E"
+                    let dayOfWeek = formatter.stringFromDate(date1)
+                    print(dayOfWeek)
+                 }
+*/
+
                 dispatch_async(dispatch_get_main_queue(), {
                     NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "recvNewDataFromServer", object: nil))
                 })

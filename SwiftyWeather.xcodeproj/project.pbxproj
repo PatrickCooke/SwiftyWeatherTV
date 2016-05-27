@@ -23,6 +23,7 @@
 		43DC92271CF75EAA0062C5CC /* RoundedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC92261CF75EAA0062C5CC /* RoundedTextView.swift */; };
 		43DC92291CF75ECF0062C5CC /* RoundedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC92281CF75ECF0062C5CC /* RoundedLabel.swift */; };
 		43DC922B1CF778DA0062C5CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43DC922A1CF778DA0062C5CC /* Assets.xcassets */; };
+		43DC922D1CF883C80062C5CC /* DailyWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC922C1CF883C80062C5CC /* DailyWeatherCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		43DC92261CF75EAA0062C5CC /* RoundedTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedTextView.swift; sourceTree = "<group>"; };
 		43DC92281CF75ECF0062C5CC /* RoundedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedLabel.swift; sourceTree = "<group>"; };
 		43DC922A1CF778DA0062C5CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		43DC922C1CF883C80062C5CC /* DailyWeatherCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyWeatherCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				43DC92241CF75E1B0062C5CC /* RoundedButton.swift */,
 				43DC92261CF75EAA0062C5CC /* RoundedTextView.swift */,
 				43DC92281CF75ECF0062C5CC /* RoundedLabel.swift */,
+				43DC922C1CF883C80062C5CC /* DailyWeatherCell.swift */,
 				433946621CEA342D0093A8D7 /* Objective C Reachability Stuff */,
 			);
 			path = SwiftyWeather;
@@ -201,6 +204,7 @@
 				4339466F1CEB4D0D0093A8D7 /* Locations+CoreDataProperties.swift in Sources */,
 				4339464F1CEA33C10093A8D7 /* ViewController.swift in Sources */,
 				433946611CEA34220093A8D7 /* Reachability.m in Sources */,
+				43DC922D1CF883C80062C5CC /* DailyWeatherCell.swift in Sources */,
 				4339464D1CEA33C10093A8D7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,7 +12,7 @@ class DailyWeather: NSObject {
     var dayMaxTemp  :Double!
     var dayMinTemp  :Double!
     var precipOdds  :Double!
-    var precipType  :String!
+    var dayIcon     :String!
     var time        :Double!
     var daysum      :String!
 

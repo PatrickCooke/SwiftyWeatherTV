@@ -61,12 +61,12 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feels Like:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="52U-ZN-h3x" customClass="RoundedLabel" customModule="SwiftyWeather" customModuleProvider="target">
-                                <rect key="frame" x="20" y="203" width="87" height="21"/>
+                                <rect key="frame" x="20" y="203" width="66" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="87" id="8vF-ab-gOw"/>
+                                    <constraint firstAttribute="width" constant="66" id="8vF-ab-gOw"/>
                                     <constraint firstAttribute="height" constant="21" id="Q3l-x9-AIa"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -76,12 +76,13 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FAd-TQ-jlJ" customClass="RoundedLabel" customModule="SwiftyWeather" customModuleProvider="target">
-                                <rect key="frame" x="115" y="203" width="332" height="21"/>
+                                <rect key="frame" x="91" y="203" width="76" height="21"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="76" id="Ps0-Nj-pPG"/>
                                     <constraint firstAttribute="height" constant="21" id="iJh-AB-czX"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -91,13 +92,13 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dUb-Sc-Mwm" customClass="RoundedLabel" customModule="SwiftyWeather" customModuleProvider="target">
-                                <rect key="frame" x="20" y="243" width="52" height="26"/>
+                                <rect key="frame" x="20" y="228" width="49" height="26"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="52" id="91b-Zd-sUK"/>
+                                    <constraint firstAttribute="width" constant="49" id="91b-Zd-sUK"/>
                                     <constraint firstAttribute="height" constant="26" id="vdP-EK-KvK"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -107,12 +108,13 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chance of Rain" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="seQ-3U-o82" customClass="RoundedLabel" customModule="SwiftyWeather" customModuleProvider="target">
-                                <rect key="frame" x="80" y="243" width="367" height="21"/>
+                                <rect key="frame" x="77" y="230" width="90" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="354" id="557-Ap-Zmv"/>
+                                    <constraint firstAttribute="width" constant="90" id="5c2-NA-N0Z"/>
                                     <constraint firstAttribute="height" constant="21" id="g5z-Wz-BNV"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -126,13 +128,35 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High / Low" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TVn-no-who" customClass="RoundedLabel" customModule="SwiftyWeather" customModuleProvider="target">
+                                <rect key="frame" x="455" y="236" width="125" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="6of-lx-kpv"/>
+                                    <constraint firstAttribute="width" constant="354" id="DfX-4y-TK4"/>
+                                    <constraint firstAttribute="width" constant="125" id="k4C-tm-VWz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="6of-lx-kpv"/>
+                                        <exclude reference="DfX-4y-TK4"/>
+                                    </mask>
+                                </variation>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wind blowing at:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="veY-Xi-k1s" customClass="RoundedLabel" customModule="SwiftyWeather" customModuleProvider="target">
-                                <rect key="frame" x="20" y="282" width="164" height="26"/>
+                                <rect key="frame" x="20" y="258" width="107" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="rjh-li-H2z"/>
-                                    <constraint firstAttribute="width" constant="164" id="yTo-OW-nZM"/>
+                                    <constraint firstAttribute="width" constant="107" id="yTo-OW-nZM"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -142,12 +166,13 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BLL-Lx-Zkh" customClass="RoundedLabel" customModule="SwiftyWeather" customModuleProvider="target">
-                                <rect key="frame" x="192" y="282" width="388" height="26"/>
+                                <rect key="frame" x="116" y="257" width="51" height="26"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="51" id="SMp-3I-tpE"/>
                                     <constraint firstAttribute="height" constant="26" id="q04-lq-b0W"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -156,11 +181,11 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hxu-LN-VRx" customClass="RoundedTextView" customModule="SwiftyWeather" customModuleProvider="target">
-                                <rect key="frame" x="20" y="316" width="560" height="125"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxu-LN-VRx" customClass="RoundedTextView" customModule="SwiftyWeather" customModuleProvider="target">
+                                <rect key="frame" x="20" y="287" width="560" height="80"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="125" id="ThY-Di-FVX"/>
+                                    <constraint firstAttribute="height" constant="80" id="ThY-Di-FVX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -195,13 +220,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KcY-1q-kNT" customClass="RoundedButton" customModule="SwiftyWeather" customModuleProvider="target">
-                                <rect key="frame" x="482" y="449" width="98" height="31"/>
+                                <rect key="frame" x="482" y="472" width="98" height="25"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="98" id="6Ox-70-dJC"/>
-                                    <constraint firstAttribute="height" constant="31" id="sJs-Lg-Hmj"/>
+                                    <constraint firstAttribute="height" constant="25" id="sJs-Lg-Hmj"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                                 <state key="normal" title="Store City"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -212,23 +237,23 @@
                                     <action selector="saveLocationPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="RVB-kO-gM6"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="28" sectionHeaderHeight="20" sectionFooterHeight="20" translatesAutoresizingMaskIntoConstraints="NO" id="WoC-eU-5kP">
-                                <rect key="frame" x="0.0" y="488" width="600" height="112"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="36" sectionHeaderHeight="20" sectionFooterHeight="20" translatesAutoresizingMaskIntoConstraints="NO" id="WoC-eU-5kP">
+                                <rect key="frame" x="0.0" y="501" width="600" height="99"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="112" id="u4t-lo-PEr"/>
                                 </constraints>
                                 <inset key="scrollIndicatorInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="OQS-mK-bKa" rowHeight="28" style="IBUITableViewCellStyleDefault" id="TzV-ua-leh">
-                                        <rect key="frame" x="0.0" y="20" width="600" height="28"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="OQS-mK-bKa" rowHeight="36" style="IBUITableViewCellStyleDefault" id="TzV-ua-leh">
+                                        <rect key="frame" x="0.0" y="20" width="600" height="36"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TzV-ua-leh" id="5kz-gz-1xg">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="27.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="35.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OQS-mK-bKa">
-                                                    <rect key="frame" x="15" y="0.0" width="570" height="27.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="570" height="35.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -238,56 +263,185 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="u4t-lo-PEr"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="3v2-ge-Vgt"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="NTS-EA-vP5"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Tn-1n-FUu" customClass="RoundedLabel" customModule="SwiftyWeather" customModuleProvider="target">
+                                <rect key="frame" x="455" y="258" width="125" height="26"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="125" id="DYP-NL-y8D"/>
+                                    <constraint firstAttribute="height" constant="26" id="E8R-XT-nqc"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="26" id="J08-mU-URx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="J08-mU-URx"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JFv-hc-pvm">
+                                <rect key="frame" x="20" y="393" width="560" height="75"/>
+                                <color key="backgroundColor" red="0.95602115399999998" green="0.95132935110000005" blue="0.96210323949999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="SYN-Mj-s6r"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VPQ-UX-I4Z">
+                                    <size key="itemSize" width="100" height="75"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="Jqn-3X-MDx" customClass="DailyWeatherCell" customModule="SwiftyWeather" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="75"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="onx-jY-t0f">
+                                                    <rect key="frame" x="0.0" y="25" width="100" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="tc3-1l-g15"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JQL-zO-qeL">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="17" id="OTs-It-mvP"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="onx-jY-t0f" firstAttribute="leading" secondItem="Jqn-3X-MDx" secondAttribute="leadingMargin" constant="-8" id="3qX-nt-EF9"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="JQL-zO-qeL" secondAttribute="trailing" constant="-8" id="6IF-xV-e7X"/>
+                                            <constraint firstAttribute="leadingMargin" secondItem="JQL-zO-qeL" secondAttribute="leading" constant="8" id="7Z1-Mu-ksG"/>
+                                            <constraint firstItem="JQL-zO-qeL" firstAttribute="top" secondItem="Jqn-3X-MDx" secondAttribute="topMargin" constant="-8" id="8W0-hk-6t8"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="onx-jY-t0f" secondAttribute="trailing" constant="-8" id="Y6m-2Z-Rzz"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="onx-jY-t0f" secondAttribute="bottom" constant="-8" id="j3b-Go-YlC"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="dateIcon" destination="onx-jY-t0f" id="gco-Ah-zM2"/>
+                                            <outlet property="dateLabel" destination="JQL-zO-qeL" id="vB2-zJ-kgY"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="9vf-1M-dQB"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="a0e-VP-wKa"/>
+                                </connections>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8 Day Forcast:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1i-gt-keL">
+                                <rect key="frame" x="20" y="370" width="560" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="gPA-fy-F7t"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.95602115399999998" green="0.95132935110000005" blue="0.96210323949999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="3Hs-MC-K0h" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="17m-bU-VKh"/>
-                            <constraint firstItem="OiN-8h-vo3" firstAttribute="leading" secondItem="seQ-3U-o82" secondAttribute="trailing" constant="8" id="2MJ-VP-vSG"/>
+                            <constraint firstItem="OiN-8h-vo3" firstAttribute="leading" secondItem="seQ-3U-o82" secondAttribute="trailing" constant="293" id="2MJ-VP-vSG"/>
                             <constraint firstItem="sj2-ye-cgu" firstAttribute="leading" secondItem="7sK-CU-pCw" secondAttribute="trailing" constant="8" id="5iO-XF-cCC"/>
                             <constraint firstItem="KcY-1q-kNT" firstAttribute="top" secondItem="hxu-LN-VRx" secondAttribute="bottom" constant="8" id="7NY-8z-9bm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hxu-LN-VRx" secondAttribute="trailing" id="7wQ-QQ-DwH"/>
                             <constraint firstItem="OiN-8h-vo3" firstAttribute="top" secondItem="3Hs-MC-K0h" secondAttribute="bottom" constant="6" id="8j8-Yp-IFG"/>
+                            <constraint firstItem="dUb-Sc-Mwm" firstAttribute="centerY" secondItem="seQ-3U-o82" secondAttribute="centerY" id="8nc-z7-MWF"/>
                             <constraint firstAttribute="leadingMargin" secondItem="feX-gp-msW" secondAttribute="leading" id="9kD-7u-udx"/>
+                            <constraint firstItem="1Tn-1n-FUu" firstAttribute="top" secondItem="TVn-no-who" secondAttribute="bottom" constant="1" id="9z1-sV-WiV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WoC-eU-5kP" secondAttribute="trailing" constant="-20" id="Bdi-Ce-aaA"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="BLL-Lx-Zkh" secondAttribute="trailing" id="Cw2-QM-vN9"/>
+                            <constraint firstItem="veY-Xi-k1s" firstAttribute="centerY" secondItem="BLL-Lx-Zkh" secondAttribute="centerY" constant="1" id="BoQ-JF-RT4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BLL-Lx-Zkh" secondAttribute="trailing" constant="402" id="Cw2-QM-vN9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TVn-no-who" secondAttribute="trailing" id="E4c-gM-azU"/>
                             <constraint firstItem="OiN-8h-vo3" firstAttribute="leading" secondItem="sj2-ye-cgu" secondAttribute="trailing" constant="8" id="GAh-MQ-72b"/>
-                            <constraint firstItem="dUb-Sc-Mwm" firstAttribute="top" secondItem="52U-ZN-h3x" secondAttribute="bottom" constant="19" id="I0A-Mj-AYh"/>
+                            <constraint firstItem="JFv-hc-pvm" firstAttribute="top" secondItem="hxu-LN-VRx" secondAttribute="bottom" constant="8" id="GHJ-ii-kKO"/>
+                            <constraint firstItem="JFv-hc-pvm" firstAttribute="top" secondItem="J1i-gt-keL" secondAttribute="bottom" constant="2" id="GLQ-jN-O1G"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="J1i-gt-keL" secondAttribute="leading" id="GR7-r4-Lx1"/>
+                            <constraint firstItem="dUb-Sc-Mwm" firstAttribute="top" secondItem="52U-ZN-h3x" secondAttribute="bottom" constant="4" id="I0A-Mj-AYh"/>
+                            <constraint firstItem="FAd-TQ-jlJ" firstAttribute="centerY" secondItem="52U-ZN-h3x" secondAttribute="centerY" id="KT4-sf-g88"/>
                             <constraint firstAttribute="leadingMargin" secondItem="hxu-LN-VRx" secondAttribute="leading" id="KUF-Lk-Tu8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KcY-1q-kNT" secondAttribute="trailing" id="KZO-QW-Ogz"/>
-                            <constraint firstItem="hxu-LN-VRx" firstAttribute="top" secondItem="veY-Xi-k1s" secondAttribute="bottom" constant="8" id="LH6-64-D2g"/>
-                            <constraint firstItem="veY-Xi-k1s" firstAttribute="top" secondItem="dUb-Sc-Mwm" secondAttribute="bottom" constant="13.5" id="LoE-Kw-YhO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="J1i-gt-keL" secondAttribute="trailing" id="L2L-wu-beN"/>
+                            <constraint firstItem="hxu-LN-VRx" firstAttribute="top" secondItem="veY-Xi-k1s" secondAttribute="bottom" constant="3" id="LH6-64-D2g"/>
+                            <constraint firstItem="veY-Xi-k1s" firstAttribute="top" secondItem="dUb-Sc-Mwm" secondAttribute="bottom" constant="4" id="LoE-Kw-YhO"/>
                             <constraint firstAttribute="leadingMargin" secondItem="WoC-eU-5kP" secondAttribute="leading" constant="20" id="P7Q-3d-ZWe"/>
                             <constraint firstItem="WoC-eU-5kP" firstAttribute="top" secondItem="KcY-1q-kNT" secondAttribute="bottom" constant="8" id="PZ8-dU-vMA"/>
-                            <constraint firstItem="FAd-TQ-jlJ" firstAttribute="leading" secondItem="52U-ZN-h3x" secondAttribute="trailing" constant="8" id="Ttg-aC-sNO"/>
+                            <constraint firstItem="FAd-TQ-jlJ" firstAttribute="leading" secondItem="52U-ZN-h3x" secondAttribute="trailing" constant="5" id="Ttg-aC-sNO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OiN-8h-vo3" secondAttribute="trailing" id="U4B-Np-0tZ"/>
+                            <constraint firstItem="1Tn-1n-FUu" firstAttribute="top" secondItem="OiN-8h-vo3" secondAttribute="bottom" constant="19" id="VSK-Nw-KJ8"/>
                             <constraint firstItem="KcY-1q-kNT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VrK-Qc-GjF"/>
                             <constraint firstItem="FAd-TQ-jlJ" firstAttribute="top" secondItem="7sK-CU-pCw" secondAttribute="bottom" constant="8" id="ZE9-3Z-BrW"/>
                             <constraint firstItem="52U-ZN-h3x" firstAttribute="top" secondItem="7sK-CU-pCw" secondAttribute="bottom" constant="8" id="ajZ-6u-26U"/>
                             <constraint firstItem="seQ-3U-o82" firstAttribute="leading" secondItem="dUb-Sc-Mwm" secondAttribute="trailing" constant="8" id="bK2-EE-uco"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3Hs-MC-K0h" secondAttribute="trailing" constant="-20" id="bQ6-ey-hgO"/>
-                            <constraint firstItem="BLL-Lx-Zkh" firstAttribute="leading" secondItem="veY-Xi-k1s" secondAttribute="trailing" constant="8" id="c9z-DT-EAP"/>
+                            <constraint firstItem="BLL-Lx-Zkh" firstAttribute="leading" secondItem="veY-Xi-k1s" secondAttribute="trailing" constant="-11" id="c9z-DT-EAP"/>
+                            <constraint firstItem="FAd-TQ-jlJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="71" id="cpI-uL-bql"/>
                             <constraint firstAttribute="leadingMargin" secondItem="veY-Xi-k1s" secondAttribute="leading" id="cyc-Mj-eru"/>
                             <constraint firstAttribute="leadingMargin" secondItem="7sK-CU-pCw" secondAttribute="leading" id="eQb-S0-EnG"/>
-                            <constraint firstItem="seQ-3U-o82" firstAttribute="top" secondItem="FAd-TQ-jlJ" secondAttribute="bottom" constant="19" id="irN-k9-lab"/>
-                            <constraint firstItem="BLL-Lx-Zkh" firstAttribute="top" secondItem="seQ-3U-o82" secondAttribute="bottom" constant="18.5" id="mUm-BQ-y6i"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1Tn-1n-FUu" secondAttribute="trailing" id="eu7-k5-uW7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JFv-hc-pvm" secondAttribute="trailing" id="ifT-NU-amF"/>
+                            <constraint firstItem="seQ-3U-o82" firstAttribute="top" secondItem="FAd-TQ-jlJ" secondAttribute="bottom" constant="6" id="irN-k9-lab"/>
+                            <constraint firstItem="TVn-no-who" firstAttribute="top" secondItem="OiN-8h-vo3" secondAttribute="bottom" constant="-3" id="jYv-tO-Kzm"/>
+                            <constraint firstItem="WoC-eU-5kP" firstAttribute="top" secondItem="KcY-1q-kNT" secondAttribute="bottom" constant="4" id="kgJ-8A-Jzk"/>
+                            <constraint firstItem="BLL-Lx-Zkh" firstAttribute="top" secondItem="seQ-3U-o82" secondAttribute="bottom" constant="9" id="mUm-BQ-y6i"/>
                             <constraint firstItem="3Hs-MC-K0h" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="n2Q-Il-Prt"/>
+                            <constraint firstItem="KcY-1q-kNT" firstAttribute="top" secondItem="JFv-hc-pvm" secondAttribute="bottom" constant="4" id="nge-VK-Krs"/>
                             <constraint firstItem="feX-gp-msW" firstAttribute="top" secondItem="3Hs-MC-K0h" secondAttribute="bottom" id="p9V-G4-7Ch"/>
-                            <constraint firstItem="OiN-8h-vo3" firstAttribute="leading" secondItem="FAd-TQ-jlJ" secondAttribute="trailing" constant="8" id="pdH-MY-tT1"/>
+                            <constraint firstItem="OiN-8h-vo3" firstAttribute="leading" secondItem="FAd-TQ-jlJ" secondAttribute="trailing" constant="288" id="pdH-MY-tT1"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="JFv-hc-pvm" secondAttribute="leading" id="rL0-9J-agu"/>
                             <constraint firstItem="OiN-8h-vo3" firstAttribute="leading" secondItem="feX-gp-msW" secondAttribute="trailing" constant="8" id="rmJ-8J-wBy"/>
                             <constraint firstItem="7sK-CU-pCw" firstAttribute="top" secondItem="3Hs-MC-K0h" secondAttribute="bottom" constant="50" id="s61-5p-HZA"/>
                             <constraint firstAttribute="leadingMargin" secondItem="52U-ZN-h3x" secondAttribute="leading" id="sZJ-EG-9zM"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="WoC-eU-5kP" secondAttribute="bottom" id="t3W-w2-gxn"/>
                             <constraint firstItem="sj2-ye-cgu" firstAttribute="top" secondItem="3Hs-MC-K0h" secondAttribute="bottom" constant="50" id="y9Y-r2-tQS"/>
+                            <constraint firstItem="J1i-gt-keL" firstAttribute="top" secondItem="hxu-LN-VRx" secondAttribute="bottom" constant="3" id="z5R-8P-nZ3"/>
                             <constraint firstAttribute="leadingMargin" secondItem="dUb-Sc-Mwm" secondAttribute="leading" id="z5c-fc-YnS"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="ZE9-3Z-BrW"/>
+                                <exclude reference="cpI-uL-bql"/>
+                                <exclude reference="irN-k9-lab"/>
+                                <exclude reference="Cw2-QM-vN9"/>
+                                <exclude reference="mUm-BQ-y6i"/>
+                                <exclude reference="GHJ-ii-kKO"/>
+                                <exclude reference="2MJ-VP-vSG"/>
+                                <exclude reference="pdH-MY-tT1"/>
                                 <exclude reference="PZ8-dU-vMA"/>
+                                <exclude reference="7NY-8z-9bm"/>
                                 <exclude reference="VrK-Qc-GjF"/>
                             </mask>
                         </variation>
@@ -310,7 +464,9 @@
                         <outlet property="LocationLabel" destination="feX-gp-msW" id="MH1-dA-Wvg"/>
                         <outlet property="addressSearchBar" destination="3Hs-MC-K0h" id="jfc-Qg-Lun"/>
                         <outlet property="currentTempLabel" destination="sj2-ye-cgu" id="Wvf-76-Aan"/>
+                        <outlet property="dailyCollectionView" destination="JFv-hc-pvm" id="oqL-vs-Fcg"/>
                         <outlet property="feelsLikeLabel" destination="FAd-TQ-jlJ" id="P4l-xB-nRU"/>
+                        <outlet property="highLowLabel" destination="1Tn-1n-FUu" id="kai-xS-ZAE"/>
                         <outlet property="iconImageView" destination="OiN-8h-vo3" id="cQx-Ff-d7g"/>
                         <outlet property="locTableView" destination="WoC-eU-5kP" id="h6H-G5-j02"/>
                         <outlet property="precipLabel" destination="dUb-Sc-Mwm" id="WA3-fg-NAo"/>
