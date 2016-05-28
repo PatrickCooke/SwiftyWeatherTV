@@ -47,7 +47,6 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sj2-ye-cgu" customClass="RoundedLabel" customModule="SwiftyWeather" customModuleProvider="target">
                                 <rect key="frame" x="175" y="158" width="272" height="37"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36.5" id="hcs-qf-0o3"/>
                                 </constraints>
@@ -77,7 +76,6 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FAd-TQ-jlJ" customClass="RoundedLabel" customModule="SwiftyWeather" customModuleProvider="target">
                                 <rect key="frame" x="91" y="203" width="76" height="21"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="76" id="Ps0-Nj-pPG"/>
                                     <constraint firstAttribute="height" constant="21" id="iJh-AB-czX"/>
@@ -93,7 +91,6 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dUb-Sc-Mwm" customClass="RoundedLabel" customModule="SwiftyWeather" customModuleProvider="target">
                                 <rect key="frame" x="20" y="228" width="49" height="26"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="49" id="91b-Zd-sUK"/>
                                     <constraint firstAttribute="height" constant="26" id="vdP-EK-KvK"/>
@@ -167,7 +164,6 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BLL-Lx-Zkh" customClass="RoundedLabel" customModule="SwiftyWeather" customModuleProvider="target">
                                 <rect key="frame" x="116" y="257" width="51" height="26"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="51" id="SMp-3I-tpE"/>
                                     <constraint firstAttribute="height" constant="26" id="q04-lq-b0W"/>
@@ -183,7 +179,6 @@
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxu-LN-VRx" customClass="RoundedTextView" customModule="SwiftyWeather" customModuleProvider="target">
                                 <rect key="frame" x="20" y="287" width="560" height="80"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="ThY-Di-FVX"/>
                                 </constraints>
@@ -221,7 +216,6 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KcY-1q-kNT" customClass="RoundedButton" customModule="SwiftyWeather" customModuleProvider="target">
                                 <rect key="frame" x="482" y="472" width="98" height="25"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="98" id="6Ox-70-dJC"/>
                                     <constraint firstAttribute="height" constant="25" id="sJs-Lg-Hmj"/>
@@ -275,7 +269,6 @@
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Tn-1n-FUu" customClass="RoundedLabel" customModule="SwiftyWeather" customModuleProvider="target">
                                 <rect key="frame" x="455" y="258" width="125" height="26"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="125" id="DYP-NL-y8D"/>
                                     <constraint firstAttribute="height" constant="26" id="E8R-XT-nqc"/>
@@ -333,7 +326,6 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="onx-jY-t0f" firstAttribute="leading" secondItem="Jqn-3X-MDx" secondAttribute="leadingMargin" constant="-8" id="3qX-nt-EF9"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="JQL-zO-qeL" secondAttribute="trailing" constant="-8" id="6IF-xV-e7X"/>
