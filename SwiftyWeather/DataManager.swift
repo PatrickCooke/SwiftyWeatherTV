@@ -21,10 +21,13 @@ class DataManager: NSObject {
     
     func geoCoder(addressString: String) {
         print(addressString)
+        #if os(tvOS)
+        #else
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         defer {
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         }
+        #endif
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString("\(addressString)") { (placemarks, error) in
             if let placemark = placemarks?[0] {
@@ -57,10 +60,13 @@ class DataManager: NSObject {
     }
     
     func getDataFromServer(coord: String, city :String) {
+        #if os(tvOS)
+        #else
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         defer {
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         }
+        #endif
         let urlString = "https://\(baseURL)/forecast/\(API)/\(coord)"
         let url = NSURL(string: urlString)
         let urlRequest = NSURLRequest(URL: url!, cachePolicy: .ReloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 30.0)

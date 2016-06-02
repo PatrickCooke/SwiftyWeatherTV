@@ -1,37 +1,35 @@
 //
 //  ViewController.swift
-//  SwiftyWeather
+//  SwiftyWeatherTV
 //
-//  Created by Patrick Cooke on 5/16/16.
+//  Created by Patrick Cooke on 6/2/16.
 //  Copyright © 2016 Patrick Cooke. All rights reserved.
 //
 
 import UIKit
-import CoreData
-import CoreLocation
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, CLLocationManagerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     var dataManager = DataManager.sharedInstance
     var networkManager = NetworkManager.sharedInstance
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    //let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     @IBOutlet weak var LocationLabel    :UILabel!
     @IBOutlet weak var currentTempLabel :UILabel!
     @IBOutlet weak var feelsLikeLabel   :UILabel!
     @IBOutlet weak var windSpeedLabel   :UILabel!
     @IBOutlet weak var precipLabel      :UILabel!
     @IBOutlet weak var iconImageView    :UIImageView!
-    @IBOutlet weak var addressSearchBar :UISearchBar!
+    @IBOutlet weak var addressSearchTextField :UITextField!
     @IBOutlet weak var summaryTxtView   :UITextView!
-    private var locArray = [Locations]()
+    //private var locArray = [Locations]()
     private var dailyArray = [DailyWeather]()
-    @IBOutlet weak var locTableView     :UITableView!
+   // @IBOutlet weak var locTableView     :UITableView!
     @IBOutlet weak var highLowLabel     :UILabel!
-    var locationManager = CLLocationManager()
+    //var locationManager = CLLocationManager()
     @IBOutlet weak var dailyCollectionView  :UICollectionView!
 
-    
+
     //MARK: - CollectionView Methods
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -41,7 +39,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return dailyArray.count
     }
-
+    
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! DailyWeatherCell
         
@@ -70,10 +68,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSizeMake(125, 75)
+        return CGSizeMake(200, 150)
     }
     
-    //MARK: - Table Methods
+/*    //MARK: - Table Methods
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return locArray.count
@@ -102,20 +100,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             if let lon = objectslected.locLon {
                 let coords = "\(lat),\(lon)"
                 if let city = objectslected.locDescription {
-                print("Pre \(coords)")
-                dataManager.getDataFromServer(coords, city: city)
+                    print("Pre \(coords)")
+                    dataManager.getDataFromServer(coords, city: city)
                 }
             }
         }
     }
-    
+*/
     
     //MARK: - Interactivity
-    
+    /*
     func fetchEntries() -> [Locations]? {
         let fetchRequest = NSFetchRequest(entityName: "Locations")
         print("fetch")
-            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "locDescription", ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "locDescription", ascending: true)]
         do {
             let tempArray = try managedObjectContext.executeFetchRequest(fetchRequest) as! [Locations]
             return tempArray
@@ -125,7 +123,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     private func loadLocArray() {
-         locArray = fetchEntries()!
+        locArray = fetchEntries()!
     }
     
     @IBAction private func saveLocationPressed () {
@@ -137,13 +135,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         searchedCity.dateEntered = NSDate()
         appDelegate.saveContext()
         loadLocArray()
-        locTableView!.reloadData()
+        //locTableView!.reloadData()
         
     }
-    
+    */
     private func performGeocode() {
         if networkManager.serverAvailable{
-            if let address = addressSearchBar.text {
+            if let address = addressSearchTextField.text {
                 dataManager.geoCoder(address)
             } else {
                 print("Hey type something first")
@@ -153,16 +151,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    @IBAction private func getButtonPressed(sender: UIBarButtonItem) {
-        addressSearchBar.resignFirstResponder()
+    @IBAction func getButtonPressed() {
+        //addressSearchTextField.resignFirstResponder()
         performGeocode()
-        addressSearchBar.text = ""
+        addressSearchTextField.text = ""
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        addressSearchBar.resignFirstResponder()
+        addressSearchTextField.resignFirstResponder()
         performGeocode()
-        addressSearchBar.text = ""
+        addressSearchTextField.text = ""
     }
     
     func fillEverythingOut() {
@@ -175,27 +173,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         if let apptemp = dataManager.currentWeather.curAppTemp {
             let estimateTemp = Int(apptemp)
-        feelsLikeLabel.text = ("\(estimateTemp) °F")
+            feelsLikeLabel.text = ("\(estimateTemp) °F")
         }
         if let windspeed = dataManager.currentWeather.curWind {
             let windspeed2 = Int(windspeed)
             windSpeedLabel.text = "\(windspeed2) mph"
         }
-//        if let currentPrecip = dataManager.currentWeather.curPrecip {
-//            let precip = Int(currentPrecip * 100)
-//            precipLabel.text = "\(precip)%"
-//        }
+
         if let currentPrecip = dataManager.currentWeather.dailyforcast.first?.precipOdds {
             let precip = Int(currentPrecip * 100)
             precipLabel.text = "\(precip)%"
         }
         if let currentIcon = dataManager.currentWeather.curIcon {
-            iconImageView.image = UIImage (named: currentIcon)
+            iconImageView.image = UIImage (named: currentIcon )
+            //iconImageView.image = UIImage (named: currentIcon)
         }
         if let currentSummary = dataManager.currentWeather.curSummary {
             if let dailysummary = dataManager.currentWeather.dailySummary{
                 if let hourlysummary = dataManager.currentWeather.hourlySummary {
-            summaryTxtView.text = "The current weather is: " + currentSummary + ". Upcoming: " + hourlysummary + " Forcast: " + dailysummary
+                    summaryTxtView.text = "The current weather is: " + currentSummary + ". Upcoming: " + hourlysummary + " Forcast: " + dailysummary
                 }
             }
         }
@@ -221,31 +217,32 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //MARK: - Location Methods
     
     @IBAction func getLocation() {
-        setUsersClosestCity()
+//        setUsersClosestCity()
+        print("this should never be called")
     }
-
-    func setUsersClosestCity() {
-        let locValue:CLLocationCoordinate2D = locationManager.location!.coordinate
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
-        let geoCoder = CLGeocoder()
-        let location = CLLocation(latitude: locValue.latitude, longitude: locValue.longitude)
-        geoCoder.reverseGeocodeLocation(location) {
-            (placemarks, error) -> Void in
-            let placeArray = placemarks as [CLPlacemark]!
-            var placeMark: CLPlacemark! // Place details
-            placeMark = placeArray?[0]
-            if let city = placeMark.addressDictionary?["City"] as? NSString { // City
-                print(city)
-                if let state = placeMark.addressDictionary?["State"] as? NSString {
-                    print(state)
-             
-                let coords = "\(locValue.latitude),\(locValue.longitude)"
-                self.dataManager.getDataFromServer(coords, city: city as String)
-            }
-            }
-        }
-    }
-
+    
+//    func setUsersClosestCity() {
+//        let locValue:CLLocationCoordinate2D = locationManager.location!.coordinate
+//        print("locations = \(locValue.latitude) \(locValue.longitude)")
+//        let geoCoder = CLGeocoder()
+//        let location = CLLocation(latitude: locValue.latitude, longitude: locValue.longitude)
+//        geoCoder.reverseGeocodeLocation(location) {
+//            (placemarks, error) -> Void in
+//            let placeArray = placemarks as [CLPlacemark]!
+//            var placeMark: CLPlacemark! // Place details
+//            placeMark = placeArray?[0]
+//            if let city = placeMark.addressDictionary?["City"] as? NSString { // City
+//                print(city)
+//                if let state = placeMark.addressDictionary?["State"] as? NSString {
+//                    print(state)
+//                    
+//                    let coords = "\(locValue.latitude),\(locValue.longitude)"
+//                    self.dataManager.getDataFromServer(coords, city: city as String)
+//                }
+//            }
+//        }
+//    }
+    
     //MARK: - Data Methods
     
     func newDataRecv() {
@@ -260,25 +257,27 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(newDataRecv), name: "recvNewDataFromServer", object: nil)
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
+//        locationManager = CLLocationManager()
+//        locationManager.delegate = self
+//        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+//        locationManager.requestWhenInUseAuthorization()
+//        locationManager.startUpdatingLocation()
         
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        loadLocArray()
-        locTableView.reloadData()
+        //loadLocArray()
+        //locTableView.reloadData()
         //setUsersClosestCity()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-
+    
+    
 }
+
+
 
