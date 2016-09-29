@@ -25,7 +25,7 @@
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTN-HB-Wz1">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTN-HB-Wz1">
                                 <rect key="frame" x="1700" y="0.0" width="200" height="86"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="86" id="GgD-3P-G0W"/>
@@ -173,9 +173,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="hTN-HB-Wz1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="SEU-Hy-sUi"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="hTN-HB-Wz1" secondAttribute="trailing" constant="-3" id="Y2Q-0a-HRC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hTN-HB-Wz1" secondAttribute="trailing" id="Y2Q-0a-HRC"/>
                             <constraint firstAttribute="leadingMargin" secondItem="qzI-bM-6vn" secondAttribute="leading" id="gW8-oK-XQM"/>
-                            <constraint firstItem="hTN-HB-Wz1" firstAttribute="leading" secondItem="qzI-bM-6vn" secondAttribute="trailing" constant="8" id="mCF-mL-59R"/>
+                            <constraint firstItem="hTN-HB-Wz1" firstAttribute="leading" secondItem="qzI-bM-6vn" secondAttribute="trailing" constant="5" id="mCF-mL-59R"/>
                             <constraint firstItem="qzI-bM-6vn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="mpB-AI-gRa"/>
                         </constraints>
                     </view>

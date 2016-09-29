@@ -209,7 +209,7 @@
 				TargetAttributes = {
 					433946481CEA33C10093A8D7 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = H56J2Z836K;
+						DevelopmentTeam = 6L9J2XXKYC;
 					};
 					43B012101D009FC50084015F = {
 						CreatedOnToolsVersion = 7.3;
@@ -416,6 +416,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SwiftyWeather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thepatrickcooke.SwiftyWeather;
@@ -430,6 +431,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SwiftyWeather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thepatrickcooke.SwiftyWeather;
@@ -498,6 +500,7 @@
 				43B0121E1D009FC60084015F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

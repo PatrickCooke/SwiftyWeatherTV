@@ -13,7 +13,7 @@ class DataManager: NSObject {
 
     static let sharedInstance = DataManager()
     
-    var baseURL = "api.forecast.io"
+    var baseURL = "api.darksky.net"
     var API = "ae7b4ae2894051dd473dcb9521444186"
     var currentWeather = Weather()
     
